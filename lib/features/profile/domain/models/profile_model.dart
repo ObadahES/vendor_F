@@ -366,8 +366,7 @@ class Store {
     extraPackagingStatus = json['extra_packaging_status'] ?? false;
     print(
         "RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR");
-    enableUSD = json["store_config"]['store_usd_pricing_status'] ?? false;
-    // enableUSD = json['store_usd_pricing_status'] ?? false;
+    enableUSD = json['store_usd_pricing_status'] ?? false;
     print(enableUSD);
     // enableUSD = false;
     extraPackagingAmount = json['extra_packaging_amount']?.toDouble();
