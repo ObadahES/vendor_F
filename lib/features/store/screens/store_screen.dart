@@ -142,11 +142,7 @@ class _StoreScreenState extends State<StoreScreen>
                                     .storeSetup! &&
                                 Get.find<ProfileController>()
                                     .modulePermission!
-                                    .myShop!) {
-                              print("MMMMMMMMMMMMMMMMMMMMMMMMMMM");
-                              // print(store.extraPackagingStatus);
-                              print(store.enableUSD);
-                              print(store.enableUSD);
+                                    .myShop!) { 
                               Get.toNamed(
                                   RouteHelper.getStoreSettingsRoute(store));
                             } else {

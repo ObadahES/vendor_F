@@ -307,7 +307,7 @@ class StoreRepository implements StoreRepositoryInterface {
       'removedImageKeys':
           jsonEncode(Get.find<StoreController>().removeImageList)
     });
-
+    print(fields);
     Response response = await apiClient.postMultipartData(
         isAdd ? AppConstants.addItemUri : AppConstants.updateItemUri,
         fields,

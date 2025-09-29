@@ -246,10 +246,13 @@ class Store {
   String? storeBusinessModel;
   int? isAnnouncementActive;
   bool? extraPackagingStatus;
-  bool? enableUSD;
   double? extraPackagingAmount;
   bool? isHalalActive;
   double? minimumStockForWarning;
+  bool? enableUSD;
+  bool? adminEnabelUsd;
+
+  bool get isAdminEnableUsd => adminEnabelUsd ?? false;
 
   Store({
     this.id,
@@ -299,10 +302,11 @@ class Store {
     this.storeBusinessModel,
     this.isAnnouncementActive,
     this.extraPackagingStatus,
-    this.enableUSD,
     this.extraPackagingAmount,
     this.isHalalActive,
     this.minimumStockForWarning,
+    this.enableUSD,
+    this.adminEnabelUsd,
   });
 
   Store.fromJson(Map<String, dynamic> json) {
@@ -364,14 +368,11 @@ class Store {
     storeBusinessModel = json['store_business_model'];
     isAnnouncementActive = json['announcement'];
     extraPackagingStatus = json['extra_packaging_status'] ?? false;
-    print(
-        "RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR");
-    enableUSD = json['store_usd_pricing_status'] ?? false;
-    print(enableUSD);
-    // enableUSD = false;
     extraPackagingAmount = json['extra_packaging_amount']?.toDouble();
     isHalalActive = json['halal_tag_status'] ?? false;
     minimumStockForWarning = json['minimum_stock_for_warning']?.toDouble();
+    enableUSD = json['store_usd_pricing_status'] ?? false;
+    adminEnabelUsd = json['admin_enabel_usd'] ?? false;
   }
 
   Map<String, dynamic> toJson() {

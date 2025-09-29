@@ -51,11 +51,9 @@ class ConfigModel {
   int? commissionBusinessModel;
   String? subscriptionFreeTrialType;
   String? systemTaxType;
-  int? systemTaxIncludeStatus;
-  bool? adminEnabelUsd;
-  bool? enableUSD;
+  int? systemTaxIncludeStatus; 
 
-  bool get isAdminEnableUsd => adminEnabelUsd ?? false;
+  
 
   ConfigModel({
     this.businessName,
@@ -110,9 +108,7 @@ class ConfigModel {
     this.commissionBusinessModel,
     this.subscriptionFreeTrialType,
     this.systemTaxType,
-    this.systemTaxIncludeStatus,
-    this.enableUSD,
-    this.adminEnabelUsd,
+    this.systemTaxIncludeStatus, 
   });
 
   ConfigModel.fromJson(Map<String, dynamic> json) {
@@ -192,13 +188,7 @@ class ConfigModel {
     commissionBusinessModel = json['commission_business_model'];
     subscriptionFreeTrialType = json['subscription_free_trial_type'];
     systemTaxType = json['system_tax_type'];
-    systemTaxIncludeStatus = json['system_tax_include_status'];
-    // adminEnabelUsd = json['admin_enabel_usd'] ?? false;
-    // enableUSD = true;
-    adminEnabelUsd = true;
-    // json['store_config'] != null
-    //     ? json['store_config']['store_usd_pricing_status'] ?? false
-    //     : false;
+    systemTaxIncludeStatus = json['system_tax_include_status'];  
   }
 
   Map<String, dynamic> toJson() {
@@ -264,8 +254,7 @@ class ConfigModel {
     data['commission_business_model'] = commissionBusinessModel;
     data['subscription_free_trial_type'] = subscriptionFreeTrialType;
     data['system_tax_type'] = systemTaxType;
-    data['system_tax_include_status'] = systemTaxIncludeStatus;
-    // data['system_tax_include_status'] = enableUSD;
+    data['system_tax_include_status'] = systemTaxIncludeStatus; 
 
     return data;
   }

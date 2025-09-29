@@ -180,7 +180,16 @@ class _AddItemScreenState extends State<AddItemScreen>
           Get.find<StoreController>().setTag(tag.tag, isUpdate: false);
         }
       }
-      _priceController.text = _item.price.toString();
+      print("PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPp");
+      print(_item.usd_price);
+      _priceController.text = Get.find<ProfileController>()
+                  .profileModel!
+                  .stores![0]
+                  .isAdminEnableUsd ==
+              true
+          ? _item.usd_price.toString()
+          : _item.price.toString();
+
       _discountController.text = _item.discount.toString();
       _stockController.text = _item.stock.toString();
       _maxOrderQuantityController.text = _item.maxOrderQuantity.toString();

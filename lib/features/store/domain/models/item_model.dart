@@ -208,7 +208,7 @@ class Item {
       });
     }
     price = json['price']?.toDouble();
-    usd_price = json['usd_price']?.toString();
+    usd_price = json['usd_price'];
     tax = json['tax']?.toDouble();
     discount = json['discount']?.toDouble();
     discountType = json['discount_type'];
@@ -339,6 +339,7 @@ class Item {
       data['choice_options'] = choiceOptions!.map((v) => v.toJson()).toList();
     }
     data['price'] = price;
+    data['usd_price'] = usd_price;
     data['tax'] = tax;
     data['discount'] = discount;
     data['discount_type'] = discountType;

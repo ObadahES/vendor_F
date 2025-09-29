@@ -624,21 +624,23 @@ class _StoreSettingsScreenState extends State<StoreSettingsScreen> {
                   Transform.scale(
                     scale: 0.7,
                     child: Opacity(
-                      opacity: Get.find<SplashController>()
-                                  .configModel
-                                  ?.isAdminEnableUsd ==
+                      opacity: Get.find<ProfileController>()
+                                  .profileModel!
+                                  .stores![0]
+                                  .isAdminEnableUsd ==
                               true
                           ? 1.0
-                          : 0.5,
+                          : 0.5,  
                       child: CupertinoSwitch(
                         value: storeController.isUSDEnabled ?? false,
                         activeTrackColor: Theme.of(context).primaryColor,
                         inactiveTrackColor: Theme.of(context)
                             .primaryColor
                             .withValues(alpha: 0.5),
-                        onChanged: Get.find<SplashController>()
-                                    .configModel
-                                    ?.isAdminEnableUsd ==
+                        onChanged: Get.find<ProfileController>()
+                                    .profileModel!
+                                    .stores![0]
+                                    .isAdminEnableUsd ==
                                 true
                             ? (bool isActive) =>
                                 storeController.toggleEnableUSD()
